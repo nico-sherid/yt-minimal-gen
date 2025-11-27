@@ -1,12 +1,38 @@
 # yt-minimal-gen
 
-YouTube video loop-based minimal music generator.
+YouTube を使った **ミニマルミュージック生成アプリ**。
 
-This is a personal experimental web application that:
-- Selects multiple YouTube videos by keyword
-- Loops short segments
-- Plays them in parallel to generate minimal music
+複数の異なる YouTube 動画を同時に再生し、それぞれを短いループで繰り返すことで、
+偶発的なリズムとレイヤーを生み出すためのツール。
 
-Tech ideas (WIP):
-- Frontend: Web (JS)
-- Backend: Go (DDD practice)
+音楽制作・発想・環境音・ノイズ制作・実験的表現のためのアプリケーション。
+
+---
+
+## 🧠 コンセプト
+
+- 複数の YouTube 動画を **ランダムに選択**
+- 各動画を **短いループ（2〜16秒）** で再生
+- **8トラック同時再生** でミニマルな構造を作る
+- 各トラックごとに：
+  - 音量調整
+  - ミュート
+  - ループ秒数変更
+  - 動画の再抽選
+- 利用者は「操作」よりも「偶然性」を楽しむ
+
+初期バージョンでは保存機能は設けず、**その場限りのセッション**を前提とする。
+
+---
+
+## 🏗 構成（予定）
+
+このリポジトリはシンプルなモノレポ構成です。
+
+```text
+yt-minimal-gen/
+├── web/            # フロントエンド: React + TypeScript + Vite
+├── backend/        # バックエンド: Go + DDD 構成 (Phase2以降)
+├── docs/           # 仕様書・設計メモ
+├── claude.md        # Claude 用仕様入力
+└── README.md
